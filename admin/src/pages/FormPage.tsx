@@ -48,9 +48,9 @@ export default function FormPage() {
                             featured: product.featured,
                         });
                         if (product.images && product.images.length > 0) {
-                            setExistingImagesList(product.images.map((img: string) => `https://bloomnbutter-api.vercel.app${img}`));
+                            setExistingImagesList(product.images);
                         } else if (product.image_url) {
-                            setExistingImagesList([`https://bloomnbutter-api.vercel.app${product.image_url}`]);
+                            setExistingImagesList([product.image_url]);
                         }
                     }
                 } else if (cats.length > 0) {
@@ -107,8 +107,7 @@ export default function FormPage() {
             });
 
             existingImagesList.forEach(img => {
-                const relativePath = img.replace('https://bloomnbutter-api.vercel.app', '');
-                fd.append('existingImages', relativePath);
+                fd.append('existingImages', img);
             });
 
             const url = isEdit

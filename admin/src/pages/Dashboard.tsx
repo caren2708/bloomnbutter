@@ -80,7 +80,7 @@ export default function Dashboard() {
                                 <tr key={product.id} className="hover:bg-gray-50">
                                     <td className="px-6 py-4 flex items-center">
                                         {product.image_url ? (
-                                            <img src={`https://bloomnbutter-api.vercel.app${product.image_url}`} alt={product.name} className="w-10 h-10 rounded object-cover mr-3 bg-gray-100" />
+                                            <img src={product.image_url} alt={product.name} className="w-10 h-10 rounded object-cover mr-3 bg-gray-100" />
                                         ) : (
                                             <div className="w-10 h-10 rounded bg-gray-200 mr-3"></div>
                                         )}

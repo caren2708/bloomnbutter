@@ -132,9 +132,9 @@ export default function Products() {
                                 <tr key={product.id} className="hover:bg-gray-50 transition-colors">
                                     <td className="px-6 py-4 flex items-center">
                                         {(product.images && product.images.length > 0) ? (
-                                            <img src={`https://bloomnbutter-api.vercel.app${product.images[0]}`} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
+                                            <img src={product.images[0]} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
                                         ) : product.image_url ? (
-                                            <img src={`https://bloomnbutter-api.vercel.app${product.image_url}`} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
+                                            <img src={product.image_url} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
                                         ) : (
                                             <div className="w-12 h-12 rounded bg-gray-200 mr-4 border border-gray-200"></div>
                                         )}
