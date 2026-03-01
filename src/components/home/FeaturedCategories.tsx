@@ -24,7 +24,7 @@ const FeaturedCategories = () => {
                         >
                             <Link to={`/shop?category=${encodeURIComponent(category.name)}`} className="group block relative overflow-hidden rounded-2xl aspect-[4/5]">
                                 <img
-                                    src={category.image_url ? `http://localhost:3001${category.image_url}` : ''}
+                                    src={category.image_url ? `https://bloomnbutter-api.vercel.app${category.image_url}` : ''}
                                     alt={category.name}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 bg-gray-100"
                                 />

@@ -21,8 +21,8 @@ export default function Products() {
 
     const fetchData = () => {
         Promise.all([
-            fetch('http://localhost:3001/api/products').then(res => res.json()),
-            fetch('http://localhost:3001/api/categories').then(res => res.json())
+            fetch('https://bloomnbutter-api.vercel.app/api/products').then(res => res.json()),
+            fetch('https://bloomnbutter-api.vercel.app/api/categories').then(res => res.json())
         ])
             .then(([prodData, catData]) => {
                 setProducts(prodData);
@@ -38,7 +38,7 @@ export default function Products() {
     const handleDelete = async (id: string) => {
         if (!confirm('Are you sure you want to delete this product?')) return;
         try {
-            await fetch(`http://localhost:3001/api/products/${id}`, { method: 'DELETE' });
+            await fetch(`https://bloomnbutter-api.vercel.app/api/products/${id}`, { method: 'DELETE' });
             fetchData();
         } catch (err) {
             console.error(err);
@@ -63,7 +63,7 @@ export default function Products() {
                 fd.append('featured', String(!product.featured));
             }
 
-            await fetch(`http://localhost:3001/api/products/${product.id}`, {
+            await fetch(`https://bloomnbutter-api.vercel.app/api/products/${product.id}`, {
                 method: 'PUT',
                 body: fd
             });
@@ -132,9 +132,9 @@ export default function Products() {
                                 <tr key={product.id} className="hover:bg-gray-50 transition-colors">
                                     <td className="px-6 py-4 flex items-center">
                                         {(product.images && product.images.length > 0) ? (
-                                            <img src={`http://localhost:3001${product.images[0]}`} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
+                                            <img src={`https://bloomnbutter-api.vercel.app${product.images[0]}`} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
                                         ) : product.image_url ? (
-                                            <img src={`http://localhost:3001${product.image_url}`} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
+                                            <img src={`https://bloomnbutter-api.vercel.app${product.image_url}`} alt={product.name} className="w-12 h-12 rounded object-cover mr-4 bg-gray-100 border border-gray-200" />
                                         ) : (
                                             <div className="w-12 h-12 rounded bg-gray-200 mr-4 border border-gray-200"></div>
                                         )}

@@ -18,7 +18,7 @@ export default function Categories() {
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const fetchCategories = () => {
-        fetch('http://localhost:3001/api/categories')
+        fetch('https://bloomnbutter-api.vercel.app/api/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(err => console.error(err));
@@ -52,7 +52,7 @@ export default function Categories() {
                 fd.append('image', imageFile);
             }
 
-            const res = await fetch('http://localhost:3001/api/categories', {
+            const res = await fetch('https://bloomnbutter-api.vercel.app/api/categories', {
                 method: 'POST',
                 body: fd
             });
@@ -75,7 +75,7 @@ export default function Categories() {
     const handleDelete = async (id: string) => {
         if (!confirm('Are you sure you want to delete this category? Products in this category will not be deleted, but they may not display correctly until reassigned.')) return;
         try {
-            await fetch(`http://localhost:3001/api/categories/${id}`, { method: 'DELETE' });
+            await fetch(`https://bloomnbutter-api.vercel.app/api/categories/${id}`, { method: 'DELETE' });
             fetchCategories();
         } catch (err) {
             console.error(err);
@@ -175,7 +175,7 @@ export default function Categories() {
                                 <tr key={category.id} className="hover:bg-gray-50 transition-colors">
                                     <td className="px-6 py-4">
                                         {category.image_url ? (
-                                            <img src={`http://localhost:3001${category.image_url}`} alt={category.name} className="w-16 h-16 rounded object-cover bg-gray-100 border border-gray-200" />
+                                            <img src={`https://bloomnbutter-api.vercel.app${category.image_url}`} alt={category.name} className="w-16 h-16 rounded object-cover bg-gray-100 border border-gray-200" />
                                         ) : (
                                             <div className="w-16 h-16 rounded bg-gray-200 border border-gray-200 flex items-center justify-center text-gray-400 text-xs text-center p-1">No Image</div>
                                         )}

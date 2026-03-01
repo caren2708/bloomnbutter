@@ -11,8 +11,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cloudinary": "^2.9.0",
     "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
-    "multer": "^2.1.0"
+    "multer": "^2.1.0",
+    "multer-storage-cloudinary": "^4.0.0",
+    "mysql2": "^3.18.2",
+    "pg": "^8.19.0",
+    "sequelize": "^6.37.7"
   }
 }

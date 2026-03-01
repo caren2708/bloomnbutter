@@ -22,15 +22,15 @@ export const useProductStore = create<ProductState>((set) => ({
     fetchProducts: async () => {
         set({ loading: true });
         try {
-            const res = await fetch('http://localhost:3001/api/products');
+            const res = await fetch('https://bloomnbutter-api.vercel.app/api/products');
             const data = await res.json();
             const mapped = data.map((p: any) => ({
                 id: String(p.id),
                 name: p.name,
                 price: `₹${Number(p.price).toLocaleString()}`,
                 category: p.category,
-                image: (p.images && p.images.length > 0) ? `http://localhost:3001${p.images[0]}` : (p.image_url ? `http://localhost:3001${p.image_url}` : ''),
-                images: p.images ? p.images.map((img: string) => `http://localhost:3001${img}`) : [],
+                image: (p.images && p.images.length > 0) ? `https://bloomnbutter-api.vercel.app${p.images[0]}` : (p.image_url ? `https://bloomnbutter-api.vercel.app${p.image_url}` : ''),
+                images: p.images ? p.images.map((img: string) => `https://bloomnbutter-api.vercel.app${img}`) : [],
                 description: p.description,
                 in_stock: p.in_stock,
                 featured: p.featured,
@@ -44,7 +44,7 @@ export const useProductStore = create<ProductState>((set) => ({
     },
     fetchCategories: async () => {
         try {
-            const res = await fetch('http://localhost:3001/api/categories');
+            const res = await fetch('https://bloomnbutter-api.vercel.app/api/categories');
             const data = await res.json();
             set({ categories: data });
         } catch (error) {

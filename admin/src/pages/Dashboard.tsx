@@ -16,7 +16,7 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/products')
+        fetch('https://bloomnbutter-api.vercel.app/api/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -80,7 +80,7 @@ export default function Dashboard() {
                                 <tr key={product.id} className="hover:bg-gray-50">
                                     <td className="px-6 py-4 flex items-center">
                                         {product.image_url ? (
-                                            <img src={`http://localhost:3001${product.image_url}`} alt={product.name} className="w-10 h-10 rounded object-cover mr-3 bg-gray-100" />
+                                            <img src={`https://bloomnbutter-api.vercel.app${product.image_url}`} alt={product.name} className="w-10 h-10 rounded object-cover mr-3 bg-gray-100" />
                                         ) : (
                                             <div className="w-10 h-10 rounded bg-gray-200 mr-3"></div>
                                         )}

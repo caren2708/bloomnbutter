@@ -28,8 +28,8 @@ export default function FormPage() {
 
     useEffect(() => {
         Promise.all([
-            fetch('http://localhost:3001/api/categories').then(res => res.json()),
-            isEdit ? fetch('http://localhost:3001/api/products').then(res => res.json()) : Promise.resolve([])
+            fetch('https://bloomnbutter-api.vercel.app/api/categories').then(res => res.json()),
+            isEdit ? fetch('https://bloomnbutter-api.vercel.app/api/products').then(res => res.json()) : Promise.resolve([])
         ])
             .then(([categoriesData, productsData]) => {
                 const cats = categoriesData.map((c: any) => c.name) as string[];
@@ -48,9 +48,9 @@ export default function FormPage() {
                             featured: product.featured,
                         });
                         if (product.images && product.images.length > 0) {
-                            setExistingImagesList(product.images.map((img: string) => `http://localhost:3001${img}`));
+                            setExistingImagesList(product.images.map((img: string) => `https://bloomnbutter-api.vercel.app${img}`));
                         } else if (product.image_url) {
-                            setExistingImagesList([`http://localhost:3001${product.image_url}`]);
+                            setExistingImagesList([`https://bloomnbutter-api.vercel.app${product.image_url}`]);
                         }
                     }
                 } else if (cats.length > 0) {
@@ -107,13 +107,13 @@ export default function FormPage() {
             });
 
             existingImagesList.forEach(img => {
-                const relativePath = img.replace('http://localhost:3001', '');
+                const relativePath = img.replace('https://bloomnbutter-api.vercel.app', '');
                 fd.append('existingImages', relativePath);
             });
 
             const url = isEdit
-                ? `http://localhost:3001/api/products/${id}`
-                : 'http://localhost:3001/api/products';
+                ? `https://bloomnbutter-api.vercel.app/api/products/${id}`
+                : 'https://bloomnbutter-api.vercel.app/api/products';
 
             const res = await fetch(url, {
                 method: isEdit ? 'PUT' : 'POST',
