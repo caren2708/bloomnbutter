@@ -1,0 +1,47 @@
+{
+  "products": [
+    {
+      "id": "1772387402722",
+      "name": "Bracelet",
+      "price": 600,
+      "category": "jewelry",
+      "description": "The best one",
+      "badge": "",
+      "in_stock": true,
+      "featured": true,
+      "images": [
+        "/uploads/1772387402719-523599069.jpeg",
+        "/uploads/1772387402719-202247111.webp"
+      ],
+      "created_at": "2026-03-01T17:50:02.722Z"
+    },
+    {
+      "id": "1772387500152",
+      "name": "Mystery box",
+      "price": 700,
+      "category": "gift",
+      "description": "",
+      "badge": "",
+      "in_stock": true,
+      "featured": true,
+      "images": [
+        "/uploads/1772387500149-154705116.jpeg"
+      ],
+      "created_at": "2026-03-01T17:51:40.152Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "gift",
+      "name": "gift",
+      "image_url": "/uploads/1772387207512-872019046.jpeg",
+      "created_at": "2026-03-01T17:46:47.517Z"
+    },
+    {
+      "id": "jewelry",
+      "name": "jewelry",
+      "image_url": "/uploads/1772387330092-60510209.jpeg",
+      "created_at": "2026-03-01T17:48:50.094Z"
+    }
+  ]
+}
