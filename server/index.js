@@ -18,6 +18,7 @@ app.use(cors({
         'http://localhost:5173',
         'http://localhost:5174',
         'https://bloomnbutter.vercel.app',
+        'https://bloomnbutter-store.vercel.app',
         'https://bloomnbutter-nine.vercel.app'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
