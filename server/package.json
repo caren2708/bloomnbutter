@@ -20,5 +20,8 @@
     "mysql2": "^3.18.2",
     "pg": "^8.19.0",
     "sequelize": "^6.37.7"
+  },
+  "overrides": {
+    "cloudinary": "cd2.9.0"
   }
 }
